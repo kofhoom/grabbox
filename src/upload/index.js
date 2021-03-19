@@ -4,6 +4,5 @@ function UploadPage() {
             <h1> 업로드 화면</h1>
         </div>
     )
-    
 }
 export default UploadPage;
