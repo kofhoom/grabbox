@@ -1,6 +1,7 @@
 import './index.css'
 import axios from "axios";
 import React from 'react';
+import {Link} from 'react-router-dom';
 function MainPage(){
 const [products,setProducts] = React.useState([]);
 React.useEffect(function(){
@@ -25,10 +26,10 @@ return (
             {products.map(function(product,index){
             return (
             <div className="product-card">
+               <Link className="product-link" to={`/products/${index}`}>
                 <div>
                     <img className="product-img" src={product.imageUrl} />
-                </div>
-                <div className="product-contents">
+                      <div className="product-contents">
                     <span className="product-name">
                         {product.name}
                     </span>
@@ -40,6 +41,8 @@ return (
                         <span>{product.seller}</span>
                     </div>
                 </div>
+            </div>
+            </Link>
             </div>
             )
             })
